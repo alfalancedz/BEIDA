@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="#f58a1f" name="theme-color"/>
+<title>BEIDA — Logo Presentation</title>
+<style>
+    /*
+      BEIDA Logo Presentation
+      تم تضمين صورة اللوغو الأصلية داخل هذا الملف دون تعديلها.
+      إذا كان خط ORKNEY مثبتًا على جهازك، سيُستخدم تلقائيًا.
+    */
+    @font-face {
+      font-family: "Orkney";
+      src: local("Orkney"), local("ORKNEY");
+      font-display: swap;
+    }
+
+    :root {
+      --orange: #f58a1f;
+      --orange-dark: #df7410;
+      --ink: #101010;
+      --muted: #77736e;
+      --paper: #fffdfb;
+      --line: #e9e4de;
+      --soft: #f7f3ee;
+      --white: #ffffff;
+      --radius: 22px;
+      --shadow: 0 18px 55px rgba(30, 22, 12, .08);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: "Orkney", "Segoe UI", Tahoma, Arial, sans-serif;
+      line-height: 1.8;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; cursor: pointer; }
+    .container { width: min(1120px, calc(100% - 40px)); margin-inline: auto; }
+    .topbar {
+      position: sticky; top: 0; z-index: 20;
+      background: rgba(255,253,251,.9); backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(233,228,222,.85);
+    }
+    .nav {
+      min-height: 72px; display: flex; align-items: center; justify-content: space-between;
+      gap: 24px;
+    }
+    .brand { font-weight: 900; font-size: 1.2rem; letter-spacing: .13em; direction: ltr; }
+    .brand span { color: var(--orange); }
+    .nav-links { display: flex; gap: 24px; align-items: center; color: #4d4944; font-size: .9rem; }
+    .nav-links a:hover { color: var(--orange-dark); }
+    .nav-cta {
+      border: 0; background: var(--ink); color: white; padding: 9px 17px;
+      border-radius: 999px; font-size: .86rem;
+    }
+
+    .hero {
+      min-height: 650px; display: grid; place-items: center; position: relative; overflow: hidden;
+      padding: 80px 0 90px; background:
+      radial-gradient(circle at 15% 20%, rgba(245,138,31,.10), transparent 27%),
+      radial-gradient(circle at 88% 85%, rgba(245,138,31,.08), transparent 24%), var(--paper);
+    }
+    .hero:before, .hero:after {
+      content: ""; position: absolute; width: 230px; height: 230px; border: 1px solid rgba(245,138,31,.22);
+      border-radius: 50%; pointer-events: none;
+    }
+    .hero:before { top: -125px; right: -85px; }
+    .hero:after { bottom: -150px; left: -95px; width: 310px; height: 310px; }
+    .hero-content { text-align: center; width: min(900px, 100%); position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px; color: var(--orange-dark);
+      text-transform: uppercase; letter-spacing: .2em; font-size: .76rem; font-weight: 800;
+      direction: ltr;
+    }
+    .eyebrow:before { content: ""; height: 1px; width: 30px; background: currentColor; }
+    .eyebrow:after { content: ""; height: 1px; width: 30px; background: currentColor; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+    .hero h1 {
+      direction: ltr; font-size: clamp(3.8rem, 11vw, 8.8rem); line-height: .98; margin: 25px 0 14px;
+      letter-spacing: -.075em; font-weight: 950;
+    }
+    .hero h1 span { color: var(--orange); }
+    .hero-subtitle { font-size: clamp(.9rem, 2vw, 1.1rem); color: #77716b; letter-spacing: .32em; direction: ltr; }
+    .logo-stage {
+      width: min(720px, 100%); min-height: 260px; margin: 42px auto 0; display: grid; place-items: center;
+      background: white; border: 1px solid var(--line); border-radius: 28px; box-shadow: var(--shadow);
+      padding: 32px;
+    }
+    .logo-stage img { display: block; width: min(580px, 100%); max-height: 220px; object-fit: contain; }
+    .logo-fallback { display: none; text-align: center; direction: ltr; }
+    .logo-fallback .word { font-size: clamp(3rem, 9vw, 6rem); font-weight: 950; letter-spacing: -.08em; }
+    .logo-fallback .bmark { display: inline-grid; place-items: center; width: .82em; height: .88em; background: var(--orange); color: #000; margin-right: .05em; }
+    .logo-fallback small { display: block; color: var(--orange); letter-spacing: .28em; font-weight: 800; font-size: clamp(.6rem, 1.8vw, .9rem); }
+    .hero-note { margin: 25px auto 0; max-width: 590px; color: #68625c; font-size: .96rem; }
+
+    section { padding: 100px 0; }
+    .section-head { max-width: 650px; margin-bottom: 42px; }
+    .kicker { color: var(--orange-dark); font-size: .77rem; font-weight: 800; letter-spacing: .16em; direction: ltr; display: inline-block; }
+    h2 { font-size: clamp(2rem, 4vw, 3.1rem); line-height: 1.25; margin: 10px 0 15px; letter-spacing: -.04em; }
+    .section-head p { margin: 0; color: var(--muted); }
+    .story-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 22px; align-items: stretch; }
+    .story-card { border-radius: var(--radius); padding: clamp(26px, 4vw, 45px); background: var(--soft); }
+    .story-card.dark { background: var(--ink); color: white; position: relative; overflow: hidden; }
+    .story-card.dark:after { content: "B"; position: absolute; left: -10px; bottom: -120px; font-size: 22rem; line-height: 1; font-weight: 950; color: rgba(255,255,255,.045); direction: ltr; }
+    .story-card h3 { margin: 0 0 14px; font-size: 1.35rem; position: relative; z-index: 1; }
+    .story-card p { margin: 0; color: #6f6962; position: relative; z-index: 1; }
+    .story-card.dark p { color: #c9c5c0; }
+    .quote-mark { color: var(--orange); font-size: 3rem; line-height: 1; margin-bottom: 14px; }
+
+    .elements { background: #f8f5f1; }
+    .element-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+    .element-card { background: white; border: 1px solid var(--line); border-radius: 18px; padding: 24px 21px; min-height: 240px; }
+    .element-number { font-size: .75rem; letter-spacing: .15em; color: var(--orange-dark); direction: ltr; font-weight: 800; }
+    .element-symbol { height: 76px; display: flex; align-items: center; justify-content: flex-start; margin: 8px 0 12px; }
+    .symbol-square { width: 58px; height: 58px; background: var(--orange); display: grid; place-items: center; font-size: 2.5rem; font-weight: 950; direction: ltr; }
+    .symbol-arrow { font-size: 3.4rem; color: var(--orange); direction: ltr; font-weight: 900; }
+    .symbol-type { font-size: 2.3rem; font-weight: 950; letter-spacing: -.1em; direction: ltr; }
+    .symbol-field { font-size: .8rem; letter-spacing: .12em; color: var(--orange-dark); direction: ltr; font-weight: 800; }
+    .element-card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .element-card p { margin: 0; font-size: .9rem; color: var(--muted); }
+
+    .palette-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .palette-card { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+    .swatches { display: grid; grid-template-columns: 1fr 1fr; height: 180px; }
+    .swatch { display: flex; align-items: end; padding: 18px; font-size: .78rem; font-weight: 800; direction: ltr; }
+    .swatch.orange { background: var(--orange); color: #17120c; }
+    .swatch.black { background: #050505; color: white; }
+    .swatch.white { background: #fff; color: #111; border: 1px solid #eee; }
+    .swatch.gray { background: #eeeae5; color: #4c4742; }
+    .palette-info { padding: 23px 25px; }
+    .palette-info h3 { margin: 0 0 6px; }
+    .palette-info p { margin: 0; color: var(--muted); font-size: .9rem; }
+
+    .type-layout { display: grid; grid-template-columns: .8fr 1.2fr; gap: 30px; align-items: center; }
+    .type-sample { direction: ltr; font-size: clamp(3rem, 8vw, 6.7rem); line-height: 1; font-weight: 900; letter-spacing: -.08em; }
+    .type-sample span { color: var(--orange); }
+    .type-copy { border-right: 3px solid var(--orange); padding-right: 24px; }
+    .type-copy h3 { margin: 0 0 10px; }
+    .type-copy p { margin: 0; color: var(--muted); }
+
+    .applications { background: var(--ink); color: white; }
+    .applications .section-head p { color: #b7b2ac; }
+    .mockup-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 18px; }
+    .mockup { border-radius: 20px; padding: 24px; min-height: 260px; display: flex; flex-direction: column; justify-content: space-between; overflow: hidden; }
+    .mockup.light { background: #f7f3ee; color: #111; }
+    .mockup.orange-bg { background: var(--orange); color: #111; }
+    .mockup.black-bg { background: #070707; border: 1px solid #383838; color: white; }
+    .mockup-label { font-size: .7rem; letter-spacing: .16em; direction: ltr; opacity: .65; }
+    .mock-logo { direction: ltr; font-size: clamp(2.4rem, 4vw, 4rem); font-weight: 950; letter-spacing: -.08em; line-height: 1; }
+    .mock-logo-image { display: block; width: 100%; max-width: 300px; height: 130px; object-fit: contain; object-position: left center; }
+    .mock-logo .b { background: var(--orange); padding: 0 .07em; }
+    
+    .mock-caption { font-size: .8rem; opacity: .72; letter-spacing: .15em; direction: ltr; }
+    .footer { padding: 35px 0; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; gap: 18px; color: #77716b; font-size: .82rem; }
+    .footer strong { color: var(--ink); direction: ltr; letter-spacing: .15em; }
+    .to-top { width: 42px; height: 42px; border: 1px solid var(--line); border-radius: 50%; display: grid; place-items: center; background: white; }
+
+
+    /* Brand mockups page */
+    .mockups-page { background: #f7f3ee; color: var(--ink); }
+    .mockups-page .section-head p { color: var(--muted); }
+    .real-mockups-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+    .real-mockup-card { background: white; border: 1px solid var(--line); border-radius: 22px; padding: 20px; overflow: hidden; }
+    .real-mockup-label { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 16px; font-size: .74rem; color: #77716b; letter-spacing: .12em; direction: ltr; }
+    .business-card-scene { min-height: 250px; display: grid; place-items: center; background: #e9e3dc; border-radius: 15px; padding: 20px; }
+    .business-card { width: min(360px, 100%); aspect-ratio: 1.72; background: white; box-shadow: 0 18px 30px #0002; padding: 22px; display: flex; flex-direction: column; justify-content: space-between; transform: rotate(-3deg); }
+    .business-card img { width: 100%; max-height: 105px; object-fit: contain; }
+    .card-details { display: flex; justify-content: space-between; align-items: end; gap: 10px; font-size: .65rem; color: #6b6259; }
+    .card-details strong { color: #111; letter-spacing: .12em; direction: ltr; }
+    .laptop-scene { min-height: 250px; background: #e8e4de; border-radius: 15px; display: flex; align-items: center; justify-content: center; padding: 25px 16px 38px; position: relative; }
+    .laptop { width: min(380px, 100%); background: #242424; padding: 10px 10px 13px; border-radius: 12px 12px 5px 5px; box-shadow: 0 18px 25px #0002; }
+    .laptop-screen { min-height: 160px; background: #fff; display: flex; align-items: center; justify-content: center; padding: 16px; }
+    .laptop-screen img { width: 100%; max-height: 110px; object-fit: contain; }
+    .laptop-base { position: absolute; width: 88%; height: 10px; bottom: 26px; background: linear-gradient(#b7b7b7,#777); border-radius: 0 0 12px 12px; }
+    .phone-scene { min-height: 250px; display: grid; place-items: center; background: #f0e9e1; border-radius: 15px; padding: 18px; }
+    .phone { width: 145px; height: 240px; border: 7px solid #161616; border-radius: 25px; background: #fff; overflow: hidden; box-shadow: 0 15px 28px #0002; position: relative; }
+    .phone-notch { width: 52px; height: 10px; background: #161616; border-radius: 0 0 9px 9px; margin: 0 auto 10px; }
+    .phone-post { margin: 0 9px; height: 166px; background: var(--orange); display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 9px; }
+    .phone-post img { width: 100%; max-height: 70px; object-fit: contain; }
+    .phone-post span { font-size: .52rem; letter-spacing: .12em; margin-top: 9px; font-weight: 800; direction: ltr; }
+    .phone-bottom { height: 22px; display: flex; align-items: center; justify-content: space-around; color: #111; font-size: .8rem; }
+    .ad-scene { min-height: 250px; border-radius: 15px; background: #171717; overflow: hidden; position: relative; display: grid; place-items: center; padding: 24px; }
+    .ad-panel { width: 100%; min-height: 195px; background: var(--orange); display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 12px; padding: 18px; }
+    .ad-panel img { width: 100%; max-height: 105px; object-fit: contain; }
+    .ad-copy { direction: ltr; }
+    .ad-copy small { font-size: .55rem; letter-spacing: .15em; font-weight: 800; }
+    .ad-copy strong { display: block; font-size: clamp(1.1rem, 2.6vw, 1.8rem); line-height: 1.1; margin-top: 8px; }
+    .ad-copy span { display: block; font-size: .68rem; margin-top: 8px; }
+    @media (max-width: 700px) {
+      .real-mockups-grid { grid-template-columns: 1fr; }
+      .business-card-scene, .laptop-scene, .phone-scene, .ad-scene { min-height: 225px; }
+    }
+    @media print {
+      .mockups-page { background: white; }
+      .real-mockup-card { break-inside: avoid; }
+    }
+
+
+    /* More photorealistic mockup presentation */
+    .mockups-page {
+      background:
+        radial-gradient(ellipse at 12% 12%, rgba(245,138,31,.08), transparent 35%),
+        #f3eee8;
+    }
+    .real-mockup-card {
+      padding: 14px;
+      background: linear-gradient(145deg, #fff, #f8f5f1);
+      border: 1px solid rgba(30,24,18,.08);
+      box-shadow: 0 12px 35px rgba(37,28,18,.07);
+    }
+    .real-mockup-label { padding: 4px 5px 0; }
+    .business-card-scene {
+      background:
+        radial-gradient(ellipse at 50% 90%, rgba(34,25,17,.16), transparent 54%),
+        linear-gradient(135deg, #d8cec2, #f0e9e1 45%, #d5c9bc);
+      min-height: 290px;
+      perspective: 900px;
+      position: relative;
+      overflow: hidden;
+    }
+    .business-card-scene:before {
+      content: "";
+      position: absolute; inset: 0;
+      background: repeating-linear-gradient(115deg, transparent 0 34px, rgba(255,255,255,.09) 35px 36px);
+      opacity: .45;
+    }
+    .business-card {
+      position: relative;
+      width: min(370px, 92%);
+      aspect-ratio: 1.72;
+      padding: 24px 26px;
+      border-radius: 3px;
+      background: linear-gradient(145deg, #fff 0%, #fbfaf8 68%, #eee9e2 100%);
+      box-shadow: 0 25px 26px rgba(35,24,13,.24), 0 3px 5px rgba(35,24,13,.12);
+      transform: rotate(-7deg) rotateX(7deg) rotateY(-5deg);
+    }
+    .business-card:after {
+      content: "";
+      position: absolute; inset: 0;
+      border: 1px solid rgba(0,0,0,.045);
+      pointer-events: none;
+    }
+    .business-card img { max-height: 115px; }
+    .card-details { border-top: 1px solid #e8e1d9; padding-top: 12px; font-size: .59rem; }
+    .laptop-scene {
+      min-height: 290px;
+      background:
+        radial-gradient(ellipse at 50% 92%, rgba(0,0,0,.23), transparent 54%),
+        linear-gradient(135deg, #cfc9c2, #ece8e2 52%, #c9c2ba);
+      perspective: 1000px;
+      overflow: hidden;
+    }
+    .laptop {
+      width: min(410px, 95%);
+      padding: 9px 9px 12px;
+      border-radius: 12px 12px 5px 5px;
+      background: linear-gradient(115deg, #111, #454545 24%, #171717 52%, #555 78%, #111);
+      box-shadow: 0 20px 30px rgba(0,0,0,.28), inset 0 1px 1px #aaa;
+      transform: rotateX(3deg) rotateY(-5deg) rotateZ(-1deg);
+      position: relative; z-index: 2;
+    }
+    .laptop:before {
+      content: "";
+      display: block;
+      height: 4px; width: 4px; border-radius: 50%;
+      background: #777; margin: -5px auto 5px;
+    }
+    .laptop-screen {
+      min-height: 176px;
+      background:
+        radial-gradient(circle at 50% 50%, #fff 0, #fff 46%, #f8f5f0 100%);
+      border: 1px solid #090909;
+      box-shadow: inset 0 0 8px rgba(0,0,0,.08);
+    }
+    .laptop-screen img { max-height: 118px; }
+    .laptop-base {
+      height: 13px; bottom: 24px; width: 92%;
+      background: linear-gradient(#dadada 0%, #a5a5a5 38%, #777 65%, #bcbcbc 100%);
+      border-radius: 0 0 16px 16px;
+      box-shadow: 0 7px 8px rgba(0,0,0,.2);
+      clip-path: polygon(4% 0, 96% 0, 100% 70%, 94% 100%, 6% 100%, 0 70%);
+    }
+    .phone-scene {
+      min-height: 290px;
+      background:
+        radial-gradient(ellipse at 50% 92%, rgba(0,0,0,.18), transparent 55%),
+        linear-gradient(145deg, #e2d7ca, #f6f0e9 48%, #d7c9bb);
+      perspective: 800px;
+    }
+    .phone {
+      width: 150px; height: 250px;
+      border: 5px solid #171717;
+      border-radius: 28px;
+      background: #fdfcfb;
+      box-shadow: 0 22px 28px rgba(0,0,0,.24), inset 0 0 0 1px #555;
+      transform: rotate(-5deg) rotateY(-6deg);
+    }
+    .phone-notch { width: 57px; height: 12px; margin-bottom: 8px; }
+    .phone-post {
+      height: 175px;
+      margin: 0 8px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.12), transparent 45%),
+        #f58a1f;
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,.05);
+    }
+    .phone-post img { max-height: 76px; }
+    .phone-post span { letter-spacing: .08em; text-align: center; }
+    .phone-bottom { font-size: .72rem; }
+    .ad-scene {
+      min-height: 290px;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.04), transparent 38%),
+        radial-gradient(ellipse at 50% 95%, rgba(0,0,0,.65), transparent 60%),
+        #242321;
+      padding: 28px;
+      perspective: 900px;
+    }
+    .ad-panel {
+      min-height: 210px;
+      padding: 20px;
+      background:
+        linear-gradient(115deg, rgba(255,255,255,.18), transparent 35%),
+        linear-gradient(145deg, #f9952e, #ef8114);
+      box-shadow: 0 22px 28px rgba(0,0,0,.32), 0 3px 0 rgba(255,255,255,.12) inset;
+      transform: rotateY(-4deg) rotateX(2deg) rotateZ(-1deg);
+      position: relative;
+    }
+    .ad-panel:after {
+      content: "";
+      position: absolute; inset: 0;
+      border: 1px solid rgba(0,0,0,.08);
+      pointer-events: none;
+    }
+    .ad-panel img { max-height: 115px; }
+    .ad-copy strong { letter-spacing: -.04em; }
+    @media (max-width: 700px) {
+      .business-card-scene, .laptop-scene, .phone-scene, .ad-scene { min-height: 250px; }
+    }
+
+
+    .uploaded-mockups-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+    .uploaded-mockup-card {
+      background: #fff;
+      border: 1px solid rgba(30,24,18,.08);
+      border-radius: 20px;
+      padding: 14px;
+      box-shadow: 0 12px 34px rgba(37,28,18,.07);
+      overflow: hidden;
+    }
+    .uploaded-mockup-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      padding: 5px 5px 14px;
+      color: #77716b;
+      font-size: .72rem;
+    }
+    .uploaded-mockup-caption span:first-child { direction: ltr; letter-spacing: .11em; font-weight: 800; }
+    .uploaded-mockup-card img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: auto;
+      object-fit: contain;
+      border-radius: 10px;
+      background: #f0eeeb;
+    }
+    .uploaded-mockup-card p {
+      margin: 14px 5px 5px;
+      color: #6f6962;
+      font-size: .9rem;
+      line-height: 1.8;
+    }
+    .uploaded-mockups-note {
+      margin-top: 22px;
+      color: #756e66;
+      font-size: .85rem;
+      background: rgba(255,255,255,.68);
+      border-right: 3px solid var(--orange);
+      padding: 14px 16px;
+      border-radius: 8px;
+    }
+    @media (max-width: 700px) {
+      .uploaded-mockups-grid { grid-template-columns: 1fr; gap: 17px; }
+    }
+    @media print {
+      .uploaded-mockup-card { break-inside: avoid; box-shadow: none; }
+    }
+
+    @media (max-width: 850px) {
+      .nav-links { display: none; }
+      .hero { min-height: auto; padding: 70px 0; }
+      section { padding: 72px 0; }
+      .story-grid, .type-layout { grid-template-columns: 1fr; }
+      .element-grid { grid-template-columns: repeat(2, 1fr); }
+      .mockup-grid { grid-template-columns: 1fr 1fr; }
+      .type-copy { margin-top: 8px; }
+    }
+    @media (max-width: 560px) {
+      .container { width: min(100% - 28px, 1120px); }
+      .nav { min-height: 62px; }
+      .nav-cta { padding: 8px 12px; font-size: .78rem; }
+      .logo-stage { min-height: 190px; padding: 20px; border-radius: 20px; }
+      .element-grid, .palette-grid, .mockup-grid { grid-template-columns: 1fr; }
+      .element-card { min-height: auto; }
+      .swatches { height: 145px; }
+      .footer-inner { align-items: flex-start; }
+      .hero-subtitle { letter-spacing: .18em; }
+    }
+    @media print {
+      .topbar, .nav-cta, .to-top { display: none !important; }
+      section, .hero { break-inside: avoid; padding: 45px 0; }
+      body { background: white; }
+      .applications { background: white; color: black; }
+      .applications .section-head p { color: #555; }
+      .mockup.black-bg { color: black; border-color: #aaa; }
+    }
+  
+    /* Compatibility fixes: keep the presentation visible and images responsive */
+    .hero-content { width: min(1120px, calc(100% - 40px)); margin-inline: auto; text-align: center; }
+    .logo-stage img { display: block; width: min(580px, 100%); height: auto; max-height: 260px; object-fit: contain; }
+    .uploaded-mockup-card img { display: block; width: 100%; height: auto; }
+    
+/* Fixed separate mockups page */
+#mockups { display:block; position:relative; clear:both; padding:90px 0; background:#f4f0eb; }
+#mockups .container { max-width:1120px; margin:0 auto; padding:0 24px; }
+#mockups .uploaded-mockups-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+#mockups .uploaded-mockup-card { min-width:0; background:#fff; border:1px solid rgba(30,24,18,.08); border-radius:18px; padding:14px; box-shadow:0 12px 34px rgba(37,28,18,.07); overflow:hidden; }
+#mockups .uploaded-mockup-caption { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:5px 5px 14px; color:#77716b; font-size:.72rem; }
+#mockups .uploaded-mockup-caption span:first-child { direction:ltr; letter-spacing:.11em; font-weight:800; }
+#mockups .uploaded-mockup-card img { display:block; width:100%; height:auto; max-height:none; object-fit:contain; border-radius:10px; background:#f0eeeb; }
+#mockups .uploaded-mockup-card p { margin:14px 5px 5px; color:#6f6962; font-size:.9rem; line-height:1.8; }
+#mockups .uploaded-mockups-note { margin-top:22px; color:#756e66; font-size:.85rem; background:rgba(255,255,255,.75); border-right:3px solid #f58a1f; padding:14px 16px; border-radius:8px; }
+@media(max-width:700px){ #mockups .uploaded-mockups-grid{grid-template-columns:1fr;gap:17px;} }
+@media print { #mockups .uploaded-mockup-card{break-inside:avoid;box-shadow:none;} }
+
+    /* Cleanup requested: remove decorative scribbles/underlines */
+    .section-head::before,
+    .section-head::after,
+    .kicker::before,
+    .kicker::after,
+    .scribble,
+    .scribbles,
+    .decorative-scribble,
+    .handdrawn,
+    .underline-decoration,
+    .brush-stroke { display: none !important; content: none !important; }
+    
+    /* Final fix: clean mockup gallery and prevent overflow */
+    .uploaded-mockups-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+    .uploaded-mockup-card { min-width:0; overflow:hidden; }
+    .uploaded-mockup-card img { display:block; width:100%; max-width:100%; height:auto; object-fit:contain; }
+    .uploaded-mockup-card p { line-height:1.8; }
+    @media (max-width:700px) { .uploaded-mockups-grid { grid-template-columns:1fr; } }
+    </style>
+</head>
+<body>
+<header class="topbar">
+<div class="container nav">
+<a aria-label="BEIDA home" class="brand" href="#home">BEI<span>DA</span></a>
+<nav aria-label="التنقل الرئيسي" class="nav-links">
+<a href="#story">الفكرة</a>
+<a href="#elements">عناصر اللوغو</a>
+<a href="#colors">الألوان</a>
+<a href="#typography">الخط</a>
+<a href="#applications">التطبيقات</a>
+<a href="#mockups">الموكابس</a>
+</nav>
+<button class="nav-cta" onclick="window.print()">حفظ العرض PDF ↗</button>
+</div>
+</header>
+<main>
+<section class="hero" id="home">
+<div class="container hero-content">
+<span class="eyebrow">Brand identity presentation</span>
+<h1 class="sr-only">BEIDA</h1>
+<div class="hero-subtitle">SOCIAL MEDIA AND ADS</div>
+<div class="logo-stage">
+<img alt="شعار BEIDA باللونين الأسود والبرتقالي" src="assets/beida-logo-original.png"/>
+<div class="logo-fallback">
+<div class="word"><span class="bmark">B</span>eida</div>
+<small>SOCIAL MEDIA AND ADS</small>
+</div>
+</div>
+<p class="hero-note">هوية بصرية تنطلق من اسم المكان، وتحول رمزيته من صورة سلبية إلى رؤية أكثر إشراقًا وتميّزًا.</p>
+</div>
+</section>
+<section id="story">
+<div class="container">
+<div class="section-head">
+<span class="kicker">01 / THE IDEA</span>
+<h2>من المكان إلى رؤية أفضل.</h2>
+<p>فكرة الشعار لا تكتفي بتمثيل اسم الوكالة، بل تحوّل دلالة المكان إلى رسالة بصرية عن التغيير وصناعة صورة جديدة.</p>
+</div>
+<div class="story-grid">
+<article class="story-card dark">
+<div class="quote-mark">“</div>
+<h3>بداية من واقع المكان</h3>
+<p>يرتبط اسم «البيضاء» بالمكان الذي يُنتظر أن يحتضن مقر الوكالة. وقد ارتبط هذا المكان في نظر الناس بصورة غير إيجابية؛ لذلك يستحضر الجزء الأسود من حرف B هذه الدلالة بصريًا، دون أن يجعلها نهاية القصة.</p>
+</article>
+<article class="story-card">
+<h3>السهم: التحوّل نحو الأفضل</h3>
+<p>يشقّ السهم البرتقالي حرف B ويتجه إلى الخارج، فيرمز إلى الانطلاق والتغيير، وإلى رؤية أكثر إشراقًا ونظرة أجمل للمكان. ويمنح اللون البرتقالي نقطة تركيز واضحة تميّز الهوية وتدعم حضورها.</p>
+</article>
+</div>
+</div>
+</section>
+<section class="elements" id="elements">
+<div class="container">
+<div class="section-head">
+<span class="kicker">02 / LOGO ELEMENTS</span>
+<h2>كل عنصر يحمل معنى.</h2>
+<p>يتكوّن الشعار من عناصر بسيطة ومترابطة، يجمعها مفهوم الانتقال من الدلالة السلبية إلى التغيير الإيجابي.</p>
+</div>
+<div class="element-grid">
+<article class="element-card">
+<span class="element-number">ELEMENT 01</span>
+<div class="element-symbol"><span class="symbol-type">Beida</span></div>
+<h3>اسم الوكالة</h3>
+<p>اسم «Beida» هو العنصر الأساسي في الهوية، ويمنحها اسمًا واضحًا وسهل التعرّف والتذكّر.</p>
+</article>
+<article class="element-card">
+<span class="element-number">ELEMENT 02</span>
+<div class="element-symbol"><span class="symbol-square">B</span></div>
+<h3>حرف B والمستطيل</h3>
+<p>يمثّل حرف B الجزء المرتبط بالصورة السلبية للمكان، بينما يحدّد المستطيل البرتقالي المنطقة ويبرزها داخل التكوين.</p>
+</article>
+<article class="element-card">
+<span class="element-number">ELEMENT 03</span>
+<div class="element-symbol"><span class="symbol-arrow">➜</span></div>
+<h3>السهم البرتقالي</h3>
+<p>يرمز إلى الانطلاق، وتغيير الصورة الذهنية، والتوجّه نحو واقع أفضل ورؤية أجمل للمكان.</p>
+</article>
+<article class="element-card">
+<span class="element-number">ELEMENT 04</span>
+<div class="element-symbol"><span class="symbol-field">SOCIAL MEDIA<br/>AND ADS</span></div>
+<h3>المجال</h3>
+<p>العبارة أسفل الاسم توضّح اختصاص الوكالة في مجال وسائل التواصل الاجتماعي والإعلانات.</p>
+</article>
+</div>
+</div>
+</section>
+<section id="colors">
+<div class="container">
+<div class="section-head">
+<span class="kicker">03 / COLOR SYSTEM</span>
+<h2>تباين واضح، وحضور لا يُنسى.</h2>
+<p>يعتمد الشعار على الأسود والبرتقالي والأبيض؛ لتكوين تباين قوي يحافظ على الوضوح ويُسهّل استخدام الهوية في تطبيقات مختلفة.</p>
+</div>
+<div class="palette-grid">
+<article class="palette-card">
+<div class="swatches">
+<div class="swatch orange">ORANGE · #F58A1F</div>
+<div class="swatch black">BLACK · #050505</div>
+</div>
+<div class="palette-info">
+<h3>الألوان الأساسية</h3>
+<p>البرتقالي يلفت الانتباه ويعبّر عن الحركة والتغيير، والأسود يوفّر الثقل البصري والتباين، فيما يساعد الأبيض على إبراز الشعار في المساحات النظيفة.</p>
+</div>
+</article>
+<article class="palette-card">
+<div class="swatches">
+<div class="swatch white">WHITE · #FFFFFF</div>
+<div class="swatch gray">WARM GRAY · #EEEAE5</div>
+</div>
+<div class="palette-info">
+<h3>ألوان مساندة للعرض</h3>
+<p>الأبيض والرمادي الدافئ مناسبان للخلفيات والصفحات التعريفية، مع الحفاظ على ألوان الشعار الأساسية دون تغيير.</p>
+</div>
+</article>
+</div>
+</div>
+</section>
+<section id="typography">
+<div class="container">
+<div class="section-head">
+<span class="kicker">04 / TYPOGRAPHY</span>
+<h2>خطّ عصري وواضح.</h2>
+</div>
+<div class="type-layout">
+<div class="type-sample">BEI<span>DA</span></div>
+<div class="type-copy">
+<h3>ORKNEY</h3>
+<p>تم اختيار خط ORKNEY لأسلوبه الهندسي والعصري، ولما يمنحه من وضوح وحضور قوي للاسم. يُفضّل استخدام الخط نفسه في التطبيقات التي يتوفر فيها، مع الحفاظ على تناسب الأحجام والمسافات. إذا لم يكن الخط مثبتًا على جهاز العرض، فقد يظهر النص بخط بديل.</p>
+</div>
+</div>
+</div>
+</section>
+<section class="applications" id="applications">
+<div class="container">
+<div class="section-head">
+<span class="kicker">05 / BRAND APPLICATIONS</span>
+<h2>هوية مرنة في أكثر من سياق.</h2>
+<p>تساعد بساطة التكوين والتباين بين الأسود والبرتقالي على تكييف الهوية مع خلفيات مختلفة. هذه معاينات توضيحية وليست ملفات إنتاج نهائية.</p>
+</div>
+<div class="mockup-grid">
+<div class="mockup light">
+<span class="mockup-label">01 / WHITE BACKGROUND</span>
+<img alt="شعار BEIDA على خلفية بيضاء" class="mock-logo-image" src="assets/beida-logo-white.png"/>
+<span class="mock-caption">SOCIAL MEDIA AND ADS</span>
+</div>
+<div class="mockup black-bg">
+<span class="mockup-label">02 / BLACK BACKGROUND</span>
+<img alt="شعار BEIDA على خلفية سوداء" class="mock-logo-image" src="assets/beida-logo-black-bg.png"/>
+<span class="mock-caption">SOCIAL MEDIA AND ADS</span>
+</div>
+<div class="mockup orange-bg">
+<span class="mockup-label">03 / ORANGE BACKGROUND</span>
+<img alt="شعار BEIDA على خلفية برتقالية" class="mock-logo-image" src="assets/beida-logo-orange-bg.png"/>
+<span class="mock-caption">SOCIAL MEDIA AND ADS</span>
+</div>
+</div>
+</div>
+</section><div class="ad-copy"><small>BEIDA / SOCIAL MEDIA &amp; ADS</small><strong>Make your brand<br/>stand out.</strong><span>Creative ideas. Clear impact.</span></div>
+<section class="mockups-page" id="mockups">
+<div class="container">
+<div class="section-head">
+<span class="kicker">06 / BRAND MOCKUPS</span>
+<h2>BEIDA في تطبيقات واقعية.</h2>
+<p>تصوّر بصري لتطبيق الهوية على واجهة الوكالة، منصات التواصل، بطاقات الأعمال، وفضاء العمل.</p>
+</div>
+<div class="uploaded-mockups-grid">
+<article class="uploaded-mockup-card">
+<div class="uploaded-mockup-caption"><span>01 / EXTERIOR SIGNAGE</span><span>لافتة خارجية</span></div>
+<img alt="شعار BEIDA على لافتة خارجية" loading="lazy" src="assets/mockup-signage.png"/>
+<p>تطبيق الشعار على لافتة خارجية عند مدخل الوكالة.</p>
+</article>
+<article class="uploaded-mockup-card">
+<div class="uploaded-mockup-caption"><span>02 / SOCIAL MEDIA</span><span>منصات التواصل</span></div>
+<img alt="هوية BEIDA في منشورات التواصل الاجتماعي" loading="lazy" src="assets/mockup-social-media.png"/>
+<p>عرض الهوية في منشورات المحتوى الرقمي وحسابات التواصل الاجتماعي.</p>
+</article>
+<article class="uploaded-mockup-card">
+<div class="uploaded-mockup-caption"><span>03 / BUSINESS CARDS</span><span>بطاقات الأعمال</span></div>
+<img alt="شعار BEIDA على بطاقات أعمال" loading="lazy" src="assets/mockup-cards.png"/>
+<p>تطبيق الألوان والشعار على بطاقات الأعمال المطبوعة.</p>
+</article>
+<article class="uploaded-mockup-card">
+<div class="uploaded-mockup-caption"><span>04 / OFFICE INTERIOR</span><span>داخل المكتب</span></div>
+<img alt="شعار BEIDA على جدار المكتب" loading="lazy" src="assets/mockup-office.png"/>
+<p>تصوّر للشعار بحروف بارزة داخل مقر الوكالة.</p>
+</article>
+</div>
+</div>
+</section><footer class="footer">
+<div class="container footer-inner">
+<div><strong>BEIDA</strong> <span>· Logo presentation</span></div>
+<span>هوية واضحة. فكرة تتحرّك نحو الأفضل.</span>
+<a aria-label="العودة إلى الأعلى" class="to-top" href="#home">↑</a>
+</div>
+</footer>
+</main></body>
+</html>
